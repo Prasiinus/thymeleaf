@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>Creer user</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+<form method="post" action="#" th:action="@{/creerUtilisateur}" th:object="${utilisateur}">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="nom" th:field="*{nom}">
+  </div>
+  <span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}">Nom Erreur</span>
+  
+   <div class="mb-3">
+    <label for="prenom" class="form-label">Prenom</label>
+    <input type="text" class="form-control" id="prenom" th:field="*{prenom}">
+      <span th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}">preNom Erreur</span>
+  </div>
+  
+  <div class="mb-3">
+    <label for="username" class="form-label">username</label>
+    <input type="text" class="form-control" id="username" th:field="*{username}">
+      <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">username Erreur</span>
+  </div>
+  
+   <div class="mb-3">
+    <label for="email" class="form-label">email</label>
+    <input type="email" class="form-control" id="email" th:field="*{email}">
+      <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Erreur</span>
+  </div>
+  
+   <div class="mb-3">
+    <label for="mdp" class="form-label">mdp</label>
+    <input type="password" class="form-control" id="mdp" th:field="*{mdp}">
+      <span th:if="${#fields.hasErrors('mdp')}" th:errors="*{mdp}">mdp Erreur</span>
+  </div>
+  
+    <div class="mb-3">
+    <label for="telephone" class="form-label">Telephone</label>
+    <input type="text" class="form-control" id="telephone" th:field="*{telephone}">
+      <span th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}">telephone Erreur</span>
+  </div>
+  
+  
+ 
+ 
+ 
+  <button type="submit" class="btn btn-primary">Valider</button>
+</form>
+
+</body>
+</html>
